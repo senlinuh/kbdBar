@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='sd'></div>
+    <script>
+        keys = [
+            ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+            ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+            ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+        ]
+        has = {
+            'q': 'qq.com', 'w': 'ddd'
+        }
+        haslocalStorge = JSON.parse(localStorage.getItem('uuu') || null)
+        // JSON.parse(null)
+        console.log(haslocalStorge, 'xxx')
+        // console.log((localStorage.getItem('uuu') || ''))
+        console.log(haslocalStorge)
+        if (haslocalStorge) {
+            has = haslocalStorge
+        }
+        index = 0
+        while (index < keys.length) {
+            divxxx = document.createElement('div')
+            sd.appendChild(divxxx)
+            index2 = 0
+            // row = keys[index]
+            while (index2 < keys[index].length) {
+                kbd = document.createElement('kbd')
+                buttonx = document.createElement('button')
+                buttonx.textContent = '按钮'
+                // buttonx.id = row[index2]
+                buttonx.id = keys[index][index2]
+                buttonx.onclick = function (e) {
+                    console.log('xx', e.target.id)
+                    id = e.target.id
+                    url = prompt('给个哦电脑关系')
+                    console.log(url)
+                    if (ulr != null) {
+                        has[id] = url
+                        localStorage.setItem('uuu', JSON.stringify(has))
+                    }
+                    console.log(has)
+                }
+                kbd.textContent = keys[index][index2]
+                kbd.appendChild(buttonx)
+                divxxx.appendChild(kbd)
+                index2 = index2 + 1
+            }
+            index = index + 1
+        }
+        console.log(keys, has)
+
+        // 监听鼠标事件
+        document.onkeypress = function (e) {
+            console.log(e)
+            var key = e.key
+            console.log(key, has)
+            console.log(has[key])
+            // location.href = 'http://' + has[key]
+            window.open('http://' + has[key], '_blank')
+        }
+    </script>
+</body>
+
+</html>
