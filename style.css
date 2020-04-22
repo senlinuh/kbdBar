@@ -6,15 +6,27 @@ a {
     text-decoration: none;
 }
 
-#sd {
-    /* text-align: center; */
+body {
+    background: grey url(./bg.jpg);
+    background-size: cover;
+}
+
+main {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     flex-direction: column;
+    text-align: center;
 }
-#sd div{
+
+#sd {
+    /* text-align: center; */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+#sd div {
     margin: 5px 0;
 }
 
@@ -26,15 +38,29 @@ kbd {
     position: relative;
     width: 50px;
     height: 40px;
-    background: linear-gradient(to bottom,#292929 0%,#111111 100%);
+    background: linear-gradient(to bottom, #292929 0%, #111111 100%);
     color: #c5c5c5;
     border-radius: 7px;
-    box-shadow: 0 0 0 1px #1A1B1C,0 3px 0 2px #080808;
+    box-shadow: 0 0 0 1px #1a1b1c, 0 3px 0 2px #080808;
     display: inline-flex;
     /* align-items: center;
     justify-content: center; */
     margin: 4px;
     font-size: 20px;
+}
+
+kbd .text {
+    position: absolute;
+    left: 4px;
+    top: 2px;
+}
+
+kbd img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 2px;
+    left: 4px;
 }
 
 kbd button {
@@ -45,5 +71,5 @@ kbd button {
 }
 
 kbd:hover button {
-    display:inline-block
+    display: inline-block;
 }
